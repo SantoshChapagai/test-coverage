@@ -29,5 +29,5 @@ jobs:
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           path-to-coverage-json: coverage/json-summary.json
-          show-full-report: true
+          show-full-report: false
           threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
