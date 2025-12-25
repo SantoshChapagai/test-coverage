@@ -13,7 +13,6 @@ describe("HomePage Calculator", () => {
     const inputs = screen.getAllByRole("textbox");
     expect(inputs).toHaveLength(2);
   });
-
   it("updates first input value", () => {
     render(<HomePage />);
     const [firstInput] = screen.getAllByRole("textbox");
