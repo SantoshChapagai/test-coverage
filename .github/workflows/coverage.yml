@@ -24,8 +24,10 @@ jobs:
         run: yarn install
       - name: "Test"
         run: yarn vitest --coverage.enabled true
-      - name: "Report Coverage"
+      - name: Report Coverage
         if: always()
-        uses: actions/setup-node@v4
+        uses: davelosert/vitest-coverage-report-action@v2
         with:
+          path-to-coverage-json: coverage/json-summary.json
+          show-full-report: true
           threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
