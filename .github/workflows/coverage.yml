@@ -1,9 +1,10 @@
-name: "Test"
+name: "Test Coverage"
 on:
   pull_request:
   push:
     branches:
       - main
+      - dev
 
 jobs:
   test:
@@ -20,9 +21,11 @@ jobs:
         with:
           node-version: 24
       - name: "Install Dependencies"
-        run: npm install
+        run: yarn install
       - name: "Test"
-        run: npx vitest --coverage.enabled true
+        run: yarn vitest --coverage.enabled true
       - name: "Report Coverage"
         if: always()
         uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
