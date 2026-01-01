@@ -23,6 +23,3 @@ jobs:
         run: npm install
       - name: "Test"
         run: npx vitest --coverage.enabled true
-      - name: "Report Coverage"
-        if: always()
-        uses: davelosert/vitest-coverage-report-action@v2
